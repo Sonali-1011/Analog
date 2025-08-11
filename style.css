@@ -1,0 +1,193 @@
+/* body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #eaeaea;
+  text-align: center;
+  padding: 40px;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#city-select {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border: 12px solid #333;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.hand {
+  position: absolute;
+  background: black;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%, -100%) rotate(0deg);
+  transition: all 0.05s ease-in-out;
+}
+
+.hour {
+  width: 8px;
+  height: 80px;
+  background: #000;
+}
+
+.minute {
+  width: 6px;
+  height: 100px;
+  background: #555;
+}
+
+.second {
+  width: 2px;
+  height: 120px;
+  background: red;
+}
+
+.center-dot {
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#location {
+  margin-top: 20px;
+  font-weight: bold;
+} */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #eaeaea;
+  text-align: center;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#city-select {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #888;
+  transition: 0.3s ease;
+}
+
+#city-select:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border: 12px solid #333;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+.clock:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transform: scale(1.01);
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%, -100%) rotate(0deg);
+  transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+.hour {
+  width: 8px;
+  height: 80px;
+  background: #000;
+}
+
+.minute {
+  width: 6px;
+  height: 100px;
+  background: #555;
+}
+
+.second {
+  width: 2px;
+  height: 120px;
+  background: red;
+}
+
+.center-dot {
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+#location {
+  margin-top: 20px;
+  font-weight: bold;
+  transition: color 0.4s;
+}
+
+#location:hover {
+  color: #0077cc;
+}
